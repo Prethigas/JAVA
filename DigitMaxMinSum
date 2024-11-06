@@ -27,3 +27,9 @@ class DigitMaxMinSum{
 
     }
 }
+
+Output:
+1241
+3019
+1237
+22
