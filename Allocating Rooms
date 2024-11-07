@@ -29,3 +29,5 @@ class Allocating_rooms{
     }
 
 }
+
+Output:The number of room required is:3
