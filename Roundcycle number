@@ -1,0 +1,41 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int n = 64;
+        
+        ArrayList<Integer>v = new ArrayList<>();
+        while (n!=1 && !v.contains(n))
+        {
+            v.add(n);
+            n = sumofdigits(n);
+        }
+        System.out.println(v);
+        if(n==1)
+        {
+            System.out.println("Rounded");
+        }
+        else
+        {
+        System.out.println(" Not Rounded");
+        }
+    }
+    
+    public static int sumofdigits(int n){
+        int s = 0;
+        while(n>0)
+        {
+            int dig = n%10;
+            s += dig*dig;
+            n/=10;
+        }
+        return s; 
+    }
+}
+
+Output:
+[64, 52, 29, 85, 89, 145, 42, 20, 4, 16, 37, 58]
+ Not Rounded
+[68, 100]
+Rounded
+[10]
+Rounded
