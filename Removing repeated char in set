@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	 Set<Character> st=new LinkedHashSet<>();
+	 String s="avbfsraadg";
+	 
+	 for(char ch:s.toCharArray()){
+	     System.out.println(ch);
+	     st.add(ch);
+	 }
+
+	 System.out.println(st);
+	}
+}
+
+Output:
+a
+v
+b
+f
+s
+r
+a
+a
+d
+g
+[a, v, b, f, s, r, d, g]
