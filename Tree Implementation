@@ -1,0 +1,147 @@
+class Node{
+    int data;
+    Node left;
+    Node right;
+    
+    Node(int val){
+        this.data=val;
+        this.left=null;
+        this.right=null;
+    }
+}
+ class tree{
+   public  Node root=null;
+    public void insert(int val){
+        Node don=new Node(val);
+        if(root==null){
+            root=don;
+            return;
+        }
+        else
+        {
+            Node temp=root;
+            while(true)
+            {
+                if(temp.data>don.data)
+                {
+                    if(temp.left==null)
+                    {
+                    temp.left=don;
+                    break;
+                    }
+                    else
+                    {
+                    temp=temp.left;
+                    
+                    }
+                } 
+                else
+                {
+                   
+                    if(temp.right==null)
+                    {
+                    temp.right=don;
+                    break;
+                    }
+                    else
+                    {
+                    temp=temp.right;
+                    }
+                }
+            }
+          
+        }
+        
+    }
+    public void pre(Node root){
+        if(root!=null){
+            System.out.println(root.data+" ");
+            pre(root.left);
+            pre(root.right);
+            
+        }
+    }
+    public void in(Node root){
+        if(root!=null){
+            in(root.left);
+            System.out.println(root.data+" ");
+            in(root.right);
+            
+        }
+    }
+    public void post(Node root){
+        if(root!=null){
+            post(root.left);
+            post(root.right);
+            System.out.println(root.data+" ");
+            
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        tree t=new tree();
+        t.insert(100);
+        t.insert(70);
+        t.insert(110);
+        t.insert(11);
+        t.insert(85);
+        t.insert(105);
+        t.insert(123);
+        t.insert(7);
+        t.insert(93);
+        t.insert(18);
+        t.insert(114);
+        t.insert(115);
+        t.insert(116);
+        System.out.println("------------Preorder Traversal------------");
+        t.pre(t.root);
+        System.out.println("------------Inorder Traversal-------------");  
+        t.in(t.root);
+        System.out.println("------------Postorder Traversal-----------");
+        t.post(t.root);
+        }
+}
+Output:
+------------Preorder Traversal------------
+100 
+70 
+11 
+7 
+18 
+85 
+93 
+110 
+105 
+123 
+114 
+115 
+116 
+------------Inorder Traversal-------------
+7 
+11 
+18 
+70 
+85 
+93 
+100 
+105 
+110 
+114 
+115 
+116 
+123 
+------------Postorder Traversal-----------
+7 
+18 
+11 
+93 
+85 
+70 
+105 
+116 
+115 
+114 
+123 
+110 
+100 
